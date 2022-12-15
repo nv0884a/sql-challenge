@@ -1,22 +1,20 @@
 --Question1
-
 SELECT employees.emp_no,last_name,first_name,sex,salary
 FROM employees
 Inner Join salaries
 ON employees.emp_no = salaries.emp_no;
 
+ALTER TABLE employees
+ADD PRIMARY KEY (emp_no);
 --employee number, last name, first name, sex, and salary of each employee
 
 --Question 2
-
 SELECT last_name,first_name,hire_date
 FROM employees
 WHERE EXTRACT(YEAR FROM hire_date)= 1986;
-
 --List the first name, last name, and hire date for the employees who were hired in 1986.
 
 --Question 3
-
 SELECT emp.emp_no,last_name,first_name,dept_manager.dept_no,dept_name
 FROM employees AS emp
 Inner Join dept_manager
